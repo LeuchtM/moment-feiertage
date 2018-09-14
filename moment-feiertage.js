@@ -74,7 +74,7 @@
 			},
 			'Reformationstag': {
 				'date': moment(year + '-10-31'),
-				'state': ['BB', 'BH', 'HH', 'MV', 'NI', 'SN', 'ST', 'SH', 'TH']
+				'state': ['BB', 'MV', 'SN', 'ST', 'TH', 'SH', 'HH']
 			},
 			'Allerheiligen': {
 				'date': moment(year + '-11-01'),
@@ -92,6 +92,11 @@
 				'date': moment(year + '-12-26'),
 				'state': []
 			}
+		}
+		
+		if(year > 2017) //before 2017 there no holiday in HB, NI
+		{
+			holidays['Reformationstag']['state'] = ['BB', 'MV', 'SN', 'ST', 'TH', 'SH', 'HH', 'HB', 'NI'];
 		}
 
 		for (var holiday in holidays) {
